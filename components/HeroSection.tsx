@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Variants} from "framer-motion"
 
 const wordAnimation = {
   hidden: {},
@@ -18,7 +19,7 @@ const wordChild = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.6, ease: "easeOut" as const },
   },
 };
 
@@ -27,7 +28,7 @@ const fadeUp = (delay: number) => ({
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay, duration: 0.6, ease: "easeOut" as const },
   },
 });
 

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
 const navItems = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
@@ -57,7 +58,7 @@ export default function Navbar() {
       className="navbar"
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <a href="#hero" className="navbar-logo" onClick={() => handleClick("#hero")}>
         Subandrio.
@@ -68,11 +69,10 @@ export default function Navbar() {
         {navItems.map((item) => (
           <li key={item.href}>
             <button
-              className={`navbar-link ${
-                activeSection === item.href.replace("#", "")
+              className={`navbar-link ${activeSection === item.href.replace("#", "")
                   ? "navbar-link--active"
                   : ""
-              }`}
+                }`}
               onClick={() => handleClick(item.href)}
             >
               {item.label}
@@ -113,11 +113,10 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li key={item.href}>
                 <button
-                  className={`navbar-link ${
-                    activeSection === item.href.replace("#", "")
+                  className={`navbar-link ${activeSection === item.href.replace("#", "")
                       ? "navbar-link--active"
                       : ""
-                  }`}
+                    }`}
                   onClick={() => handleClick(item.href)}
                 >
                   {item.label}
