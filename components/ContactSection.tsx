@@ -95,7 +95,7 @@ export default function ContactSection() {
                   </div>
                 </a>
                 <a
-                  href="https://linkedin.com/in/subandrio"
+                  href="https://www.linkedin.com/in/subandrio-kotsuke-07a975291/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link-item"
@@ -104,7 +104,7 @@ export default function ContactSection() {
                   <div>
                     <div className="contact-link-label">LinkedIn</div>
                     <div className="contact-link-value">
-                      linkedin.com/in/subandrio
+                      linkedin.com/in/subandrio-kotsuke
                     </div>
                   </div>
                 </a>
