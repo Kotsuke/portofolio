@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { NumberTicker } from "@/registry/magicui/number-ticker";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,10 +13,10 @@ const fadeUp = {
 };
 
 const stats = [
-  { number: "1+", label: "Years Experience" },
-  { number: "20+", label: "Projects Completed" },
-  { number: "10+", label: "Technologies" },
-  { number: "100%", label: "Passion" },
+  { value: 1,   suffix: "+", label: "Years Experience" },
+  { value: 20,  suffix: "+", label: "Projects Completed" },
+  { value: 10,  suffix: "+", label: "Technologies" },
+  { value: 100, suffix: "%", label: "Passion" },
 ];
 
 export default function AboutSection() {
@@ -72,7 +73,10 @@ export default function AboutSection() {
                   variants={fadeUp}
                   whileHover={{ scale: 1.03 }}
                 >
-                  <div className="stat-number">{stat.number}</div>
+                  <div className="stat-number">
+                    <NumberTicker value={stat.value} />
+                    <span>{stat.suffix}</span>
+                  </div>
                   <div className="stat-label">{stat.label}</div>
                 </motion.div>
               ))}
