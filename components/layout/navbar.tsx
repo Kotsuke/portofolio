@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Dock, DockIcon } from "@/components/ui/dock";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { cn } from "@/lib/utils";
 import { Home, User, Code, FolderOpen, Mail } from "lucide-react";
 
@@ -117,6 +118,17 @@ export function Navbar() {
             </DockIcon>
           );
         })}
+
+        {/* Separator */}
+        <div className="mx-1 h-8 w-px bg-border/50" />
+
+        {/* Theme toggle */}
+        <DockIcon>
+          <AnimatedThemeToggler
+            variant="triangle"
+            className="flex h-full w-full items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground [&_svg]:size-5"
+          />
+        </DockIcon>
       </Dock>
     </nav>
   );
