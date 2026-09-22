@@ -35,9 +35,14 @@ export function HeroSection() {
           }}
           className="relative z-10 flex flex-col items-center justify-center"
         >
-          <p className="animate-fade-in text-neutral-600 dark:text-neutral-200 text-xs sm:text-base uppercase tracking-widest font-medium">
-            Subandrio • Full-Stack Developer
-          </p>
+          <div className="flex flex-col items-center justify-center animate-fade-in mb-4">
+            <span className="pointer-events-none bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-6xl sm:text-8xl md:text-9xl leading-none font-extrabold tracking-tighter whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10">
+              SUBANDRIO
+            </span>
+            <p className="mt-2 text-neutral-600 dark:text-neutral-200 text-xs sm:text-base uppercase tracking-widest font-medium">
+              Full-Stack Developer
+            </p>
+          </div>
 
           <div className="animate-fade-in delay-100">
             <TypewriterEffectSmooth words={words} />
@@ -48,19 +53,19 @@ export function HeroSection() {
           </p>
 
           <div className="animate-fade-in delay-300 mt-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-          <a
-            href="#projects"
-            className="w-40 h-10 inline-flex items-center justify-center rounded-xl bg-foreground text-background text-sm font-medium transition-all hover:bg-foreground/85 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            View Projects
-          </a>
-          <a
-            href="#contact"
-            className="w-40 h-10 inline-flex items-center justify-center rounded-xl border border-border bg-background text-foreground text-sm font-medium transition-all hover:bg-muted hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Contact Me
-          </a>
-        </div>
+            <a
+              href="#projects"
+              className="w-40 h-10 inline-flex items-center justify-center rounded-xl bg-foreground text-background text-sm font-medium transition-all hover:bg-foreground/85 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="w-40 h-10 inline-flex items-center justify-center rounded-xl border border-border bg-background text-foreground text-sm font-medium transition-all hover:bg-muted hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Contact Me
+            </a>
+          </div>
         </motion.div>
       </LampContainer>
 

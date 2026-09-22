@@ -233,7 +233,7 @@ html {
 
 /* ─── Gradient Text ─── */
 .text-gradient {
-  background: linear-gradient(135deg, oklch(0.93 0 0) 0%, oklch(0.75 0.15 55) 50%, oklch(0.7 0.12 40) 100%);
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #1e40af 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -248,11 +248,17 @@ html {
 
 /* ─── Subtle Glow ─── */
 .glow {
-  box-shadow: 0 0 40px oklch(0.75 0.15 55 / 8%);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.12);
 }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+}
+
+/* ─── Text Selection ─── */
+::selection {
+  background-color: rgba(59, 131, 246, 0.89);
+  color: inherit;
 }
