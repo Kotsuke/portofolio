@@ -1,29 +1,30 @@
 import { Section } from "@/components/layout/section";
 import { ExternalLink, Globe } from "lucide-react";
+import { MagicCard } from "@/components/ui/magic-card";
 
 const projects = [
   {
-    title: "Project One",
+    title: "E-Commerce Platform",
     description:
-      "A modern web application built with Next.js and TypeScript featuring real-time data and responsive design.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    github: "#",
+      "Full-stack e-commerce application with product management, cart system, and payment integration.",
+    tags: ["PHP", "Laravel", "MySQL"],
+    github: "https://github.com/Kotsuke/e-commerce",
     live: "#",
   },
   {
-    title: "Project Two",
+    title: "Smart Infrastructure App",
     description:
-      "Full-stack platform with authentication, database integration, and a clean dashboard interface.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    github: "#",
+      "Application to report damage on public infrastructure like sosial media that would help to be processed faster by government agencies.",
+    tags: ["Python", "Flask", "MySQL", "tensorflow", "LSTM Model", "OpenCV", "Flutter", "Next.js"],
+    github: "https://github.com/Kotsuke/Smart-Infrastructure",
     live: "#",
   },
   {
-    title: "Project Three",
+    title: "Portfolio Website",
     description:
-      "Creative portfolio site with smooth animations, dark mode support, and optimized performance.",
-    tags: ["Next.js", "Framer Motion", "CSS"],
-    github: "#",
+      "This very website! Built with Next.js and Framer Motion, featuring smooth scroll animations.",
+    tags: ["Next.js", "Framer Motion", "TypeScript"],
+    github: "https://github.com/Kotsuke/portofolio",
     live: "#",
   },
 ];
@@ -42,10 +43,11 @@ export function ProjectsSection() {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <article
+          <MagicCard
             key={project.title}
-            className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 transition-all hover:border-accent/20 hover:bg-card hover:glow"
+            className="group flex h-full flex-col rounded-2xl bg-card/50 p-6 transition-all cursor-pointer"
           >
+            <div className="flex h-full flex-col">
             {/* Thumbnail placeholder */}
             <div className="mb-5 flex h-36 items-center justify-center rounded-xl bg-muted/50 text-muted-foreground/30 text-sm">
               Preview
@@ -71,7 +73,7 @@ export function ProjectsSection() {
             </div>
 
             {/* Links */}
-            <div className="flex items-center gap-3 border-t border-border/50 pt-4">
+            <div className="mt-auto flex items-center gap-3 border-t border-border/50 pt-4">
               <a
                 href={project.github}
                 className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -89,7 +91,8 @@ export function ProjectsSection() {
                 Demo
               </a>
             </div>
-          </article>
+          </div>
+          </MagicCard>
         ))}
       </div>
     </Section>

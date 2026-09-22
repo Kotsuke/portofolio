@@ -1,49 +1,71 @@
-import { Section } from "@/components/layout/section";
+"use client";
+
 import { ArrowDown } from "lucide-react";
+import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import { LampContainer } from "../ui/lamp";
+import { motion } from "motion/react";
 
 export function HeroSection() {
+  const words = [
+    {
+      text: "Building",
+    },
+    {
+      text: "next-gen",
+    },
+    {
+      text: "web",
+    },
+    {
+      text: "applications.",
+      className: "text-accent dark:text-accent",
+    },
+  ];
+
   return (
-    <Section id="hero" noPadTop className="flex min-h-dvh flex-col items-center justify-center text-center">
-      {/* Subtle background glow */}
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[120px]" />
-      </div>
+    <section id="hero" className="relative w-full min-h-dvh flex flex-col items-center justify-center">
+      <LampContainer className="w-full flex-1 min-h-dvh rounded-none">
+        <motion.div
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative z-10 flex flex-col items-center justify-center"
+        >
+          <p className="animate-fade-in text-neutral-600 dark:text-neutral-200 text-xs sm:text-base uppercase tracking-widest font-medium">
+            Subandrio • Full-Stack Developer
+          </p>
 
-      <div className="relative z-10">
-        <p className="animate-fade-in mb-4 text-sm font-medium tracking-widest uppercase text-muted-foreground">
-          Hello, I&apos;m
-        </p>
+          <div className="animate-fade-in delay-100">
+            <TypewriterEffectSmooth words={words} />
+          </div>
 
-        <h1 className="animate-fade-in delay-100 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-          <span className="text-gradient">Subandrio</span>
-        </h1>
+          <p className="animate-fade-in delay-200 mt-4 max-w-2xl text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400 px-4">
+            Based in Tegal, Indonesia. I specialize in building modern, high-performance web applications that beautifully bridge the gap between complex engineering and elegant design.
+          </p>
 
-        <p className="animate-fade-in delay-200 mx-auto mt-6 max-w-lg text-lg text-muted-foreground md:text-xl">
-          A developer passionate about building clean, modern, and impactful
-          digital experiences.
-        </p>
-
-        <div className="animate-fade-in delay-300 mt-10 flex items-center justify-center gap-4">
+          <div className="animate-fade-in delay-300 mt-10 flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
           <a
             href="#projects"
-            className="inline-flex h-10 items-center gap-2 rounded-xl bg-foreground px-5 text-sm font-medium text-background transition-all hover:bg-foreground/85 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-40 h-10 inline-flex items-center justify-center rounded-xl bg-foreground text-background text-sm font-medium transition-all hover:bg-foreground/85 hover:scale-[1.02] active:scale-[0.98]"
           >
             View Projects
           </a>
           <a
             href="#contact"
-            className="inline-flex h-10 items-center gap-2 rounded-xl border border-border px-5 text-sm font-medium text-foreground transition-all hover:bg-muted hover:scale-[1.02] active:scale-[0.98]"
+            className="w-40 h-10 inline-flex items-center justify-center rounded-xl border border-border bg-background text-foreground text-sm font-medium transition-all hover:bg-muted hover:scale-[1.02] active:scale-[0.98]"
           >
             Contact Me
           </a>
         </div>
-      </div>
+        </motion.div>
+      </LampContainer>
 
       {/* Scroll indicator */}
-      <div className="animate-fade-in delay-500 absolute bottom-10 left-1/2 -translate-x-1/2">
+      <div className="animate-fade-in delay-500 absolute bottom-10 left-1/2 -translate-x-1/2 z-50">
         <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground/50 transition-colors hover:text-muted-foreground"
@@ -52,6 +74,6 @@ export function HeroSection() {
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </a>
       </div>
-    </Section>
+    </section>
   );
 }

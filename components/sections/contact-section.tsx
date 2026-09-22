@@ -1,11 +1,21 @@
 import { Section } from "@/components/layout/section";
 import { Globe, ExternalLink, Mail, Send } from "lucide-react";
+import { MagicCard } from "@/components/ui/magic-card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 
 const contactLinks = [
   {
     label: "Email",
-    value: "hello@subandrio.dev",
-    href: "mailto:hello@subandrio.dev",
+    value: "Subandrio",
+    href: "mailto:subandrio140705@gmail.com",
     icon: Mail,
   },
   {
@@ -16,8 +26,8 @@ const contactLinks = [
   },
   {
     label: "LinkedIn",
-    value: "LinkedIn Profile",
-    href: "#",
+    value: "Subandrio",
+    href: "https://www.linkedin.com/in/subandrio-kotsuke-07a975291",
     icon: ExternalLink,
   },
 ];
@@ -40,23 +50,32 @@ export function ContactSection() {
         {/* Contact links */}
         <div className="grid gap-4 sm:grid-cols-3">
           {contactLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border/50 bg-card/50 p-6 transition-all hover:border-accent/20 hover:bg-card hover:glow"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted/80 text-muted-foreground transition-colors group-hover:bg-accent/15 group-hover:text-accent">
-                <link.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">
-                  {link.label}
-                </p>
-                <p className="text-xs text-muted-foreground">{link.value}</p>
-              </div>
-            </a>
+            <Card key={link.label} className="border-none bg-transparent p-0 shadow-none">
+              <MagicCard
+                mode="orb"
+                className="flex h-full flex-col bg-card/50 p-0"
+              >
+                <CardHeader className="flex flex-col items-center justify-center border-b border-border p-6 relative z-40">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted/80 text-muted-foreground transition-colors group-hover:bg-accent/15 group-hover:text-accent">
+                    <link.icon className="h-8 w-8" />
+                  </div>
+                </CardHeader>
+                <CardContent className="relative z-40 flex flex-1 flex-col items-center justify-center space-y-2 p-6 text-center">
+                  <CardTitle>{link.label}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{link.value}</p>
+                </CardContent>
+                <CardFooter className="relative z-40 border-t border-border p-4">
+                  <Link
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className={`${buttonVariants({ variant: "default" })} flex w-full items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98]`}
+                  >
+                    Connect
+                  </Link>
+                </CardFooter>
+              </MagicCard>
+            </Card>
           ))}
         </div>
 

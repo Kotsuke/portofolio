@@ -29,18 +29,13 @@ export function AboutSection() {
             About Me
           </h2>
           <h3 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Building things for the web.
+            Passionate about crafting exceptional web experiences
           </h3>
           <p className="mb-4 leading-relaxed text-muted-foreground">
-            I&apos;m a developer based in Indonesia who enjoys creating
-            elegant solutions to complex problems. I specialize in building
-            modern web applications with clean code and thoughtful user
-            experiences.
+            I&apos;m a full-stack web developer with a deep passion for building intuitive and performant digital products. With experience spanning front-end frameworks like React and Next.js, to back-end technologies like Laravel, Flask, and Node.js, I bring ideas to life from concept to deployment.
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            When I&apos;m not coding, you can find me exploring new
-            technologies, contributing to open-source projects, or learning
-            something new.
+            I believe great software is not just about code — it&apos;s about solving real problems with clean architecture, thoughtful design, and relentless attention to detail. When I&apos;m not coding, you&apos;ll find me exploring new technologies or contributing to the developer community.
           </p>
         </div>
       </div>

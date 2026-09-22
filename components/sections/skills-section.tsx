@@ -1,18 +1,28 @@
 import { Section } from "@/components/layout/section";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const skills = [
-  { name: "JavaScript", category: "language" },
-  { name: "TypeScript", category: "language" },
-  { name: "React", category: "framework" },
-  { name: "Next.js", category: "framework" },
-  { name: "Node.js", category: "runtime" },
-  { name: "Tailwind CSS", category: "styling" },
-  { name: "HTML / CSS", category: "core" },
+  // Frontend
+  { name: "React", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
+  { name: "TypeScript", category: "frontend" },
+  { name: "JavaScript", category: "frontend" },
+  { name: "HTML", category: "frontend" },
+  { name: "CSS", category: "frontend" },
+  // Backend
+  { name: "Python", category: "backend" },
+  { name: "Flask", category: "backend" },
+  { name: "PHP", category: "backend" },
+  { name: "Laravel", category: "backend" },
+  { name: "Java", category: "backend" },
+  { name: "Node.js", category: "backend" },
+  // Tools
   { name: "Git", category: "tool" },
-  { name: "REST API", category: "concept" },
-  { name: "Figma", category: "design" },
-  { name: "Python", category: "language" },
-  { name: "SQL", category: "database" },
+  { name: "GitHub", category: "tool" },
+  { name: "Figma", category: "tool" },
+  { name: "Postman", category: "tool" },
+  { name: "VS Code", category: "tool" },
+  { name: "Docker", category: "tool" },
 ];
 
 export function SkillsSection() {
@@ -29,12 +39,14 @@ export function SkillsSection() {
 
       <div className="mx-auto grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {skills.map((skill) => (
-          <div
+          <HoverBorderGradient
             key={skill.name}
-            className="group flex items-center justify-center rounded-xl border border-border/50 bg-card/50 px-4 py-3 text-sm font-medium text-foreground transition-all hover:border-accent/30 hover:bg-card hover:glow"
+            containerClassName="w-full rounded-xl bg-transparent dark:bg-transparent"
+            as="div"
+            className="flex w-full items-center justify-center bg-card/50 px-4 py-3 text-sm font-medium text-foreground transition-all hover:text-accent"
           >
             {skill.name}
-          </div>
+          </HoverBorderGradient>
         ))}
       </div>
     </Section>
